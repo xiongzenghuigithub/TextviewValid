@@ -1,0 +1,24 @@
+//
+//  PrefixHeader.pch
+//  InputKit
+//
+//  Created by sfpay on 15/3/4.
+//  Copyright (c) 2015年 zain. All rights reserved.
+//
+
+#ifndef InputKit_PrefixHeader_pch
+#define InputKit_PrefixHeader_pch
+
+#import <Masonry/Masonry.h>
+
+#ifndef LLog
+ #define LLogF(format, ...) NSLog(@"%s:%i: %@", __FILE__, __LINE__, [NSString stringWithFormat:format, ##__VA_ARGS__]);
+
+ #ifdef DEBUG
+  #define LLog(format, ...) LLogF(format, ##__VA_ARGS__);
+ #else
+  #define LLog(format, ...) while(0){}
+ #endif
+#endif
+
+#endif
